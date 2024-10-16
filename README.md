@@ -1,6 +1,6 @@
 # Go `unicode/utf8` Optimization Opportunity
 
-This package demonstrates a standard library optimization opportunity in:
+This package demonstrates a potential Go standard library optimization opportunity in:
 
 - [`utf8.Valid`](https://pkg.go.dev/unicode/utf8#Valid)
 - [`utf8.ValidString`](https://pkg.go.dev/unicode/utf8#ValidString)
@@ -11,6 +11,8 @@ The changes that seem to lead to a significant performance improvement of up to 
 are minimal and located at lines 481 and 533.
 
 The geomean for M1 ARM64 processors is around `-12.6%`.
+The geomean for Ryzen 7 5700X appears to be significantly lower at just `-1.43%`
+with some benchmarks even showing significant performance degradation ⚠️.
 
 ## Benchmark Results
 
