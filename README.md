@@ -98,3 +98,87 @@ geomean                                                ²               +0.00%  
 ¹ all samples are equal
 ² summaries must be >0 to compute geomean
 ```
+
+### Ryzen 7 5700X
+
+```
+goos: linux
+goarch: amd64
+pkg: github.com/romshark/utf8valid
+cpu: AMD Ryzen 7 5700X 8-Core Processor             
+                                          │ .std_Fn.txt │             .opt_Fn.txt              │
+                                          │   sec/op    │    sec/op     vs base                │
+FnValidString/empty-16                      1.942n ± 0%    2.158n ± 0%  +11.12% (p=0.000 n=10)
+FnValidString/single_byte-16                2.374n ± 0%    2.589n ± 0%   +9.06% (p=0.000 n=10)
+FnValidString/single_utf8_rune-16           2.807n ± 0%    3.021n ± 0%   +7.60% (p=0.000 n=10)
+FnValidString/short_ascii-16                3.668n ± 0%    3.884n ± 0%   +5.90% (p=0.000 n=10)
+FnValidString/short_utf8-16                 24.15n ± 0%    17.84n ± 1%  -26.16% (p=0.000 n=10)
+FnValidString/all_utf8_ukranian_poetry-16   3.752µ ± 0%    2.384µ ± 0%  -36.46% (p=0.000 n=10)
+FnValidString/long_ascii-16                 222.8n ± 0%    222.9n ± 0%   +0.07% (p=0.007 n=10)
+FnValidString/wikipedia_diacritic_html-16   252.0µ ± 0%    250.9µ ± 0%   -0.44% (p=0.000 n=10)
+FnValidString/wikipedia_japan_html-16       978.0µ ± 0%    923.1µ ± 0%   -5.61% (p=0.000 n=10)
+FnValidString/invalid_surrogate_max-16      2.373n ± 0%    2.374n ± 0%        ~ (p=0.328 n=10)
+FnValid/empty-16                            2.158n ± 0%    2.158n ± 0%        ~ (p=0.875 n=10)
+FnValid/single_byte-16                      2.590n ± 0%    2.589n ± 0%        ~ (p=0.707 n=10)
+FnValid/single_utf8_rune-16                 3.022n ± 0%    3.668n ± 0%  +21.38% (p=0.000 n=10)
+FnValid/short_ascii-16                      3.885n ± 0%    3.669n ± 0%   -5.56% (p=0.000 n=10)
+FnValid/short_utf8-16                       24.08n ± 0%    18.18n ± 0%  -24.50% (p=0.000 n=10)
+FnValid/all_utf8_ukranian_poetry-16         3.751µ ± 0%    2.494µ ± 0%  -33.52% (p=0.000 n=10)
+FnValid/long_ascii-16                       223.2n ± 0%    222.0n ± 0%   -0.54% (p=0.000 n=10)
+FnValid/wikipedia_diacritic_html-16         252.0µ ± 0%    360.9µ ± 0%  +43.19% (p=0.000 n=10)
+FnValid/wikipedia_japan_html-16             978.6µ ± 0%   1259.1µ ± 1%  +28.66% (p=0.000 n=10)
+FnValid/invalid_surrogate_max-16            2.589n ± 0%    3.021n ± 0%  +16.66% (p=0.000 n=10)
+geomean                                     121.3n         119.5n        -1.43%
+
+                                          │ .std_Fn.txt  │             .opt_Fn.txt             │
+                                          │     B/op     │    B/op     vs base                 │
+FnValidString/empty-16                      0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+FnValidString/single_byte-16                0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+FnValidString/single_utf8_rune-16           0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+FnValidString/short_ascii-16                0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+FnValidString/short_utf8-16                 0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+FnValidString/all_utf8_ukranian_poetry-16   0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+FnValidString/long_ascii-16                 0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+FnValidString/wikipedia_diacritic_html-16   0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+FnValidString/wikipedia_japan_html-16       0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+FnValidString/invalid_surrogate_max-16      0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+FnValid/empty-16                            0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+FnValid/single_byte-16                      0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+FnValid/single_utf8_rune-16                 0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+FnValid/short_ascii-16                      0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+FnValid/short_utf8-16                       0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+FnValid/all_utf8_ukranian_poetry-16         0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+FnValid/long_ascii-16                       0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+FnValid/wikipedia_diacritic_html-16         0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+FnValid/wikipedia_japan_html-16             0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+FnValid/invalid_surrogate_max-16            0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+geomean                                                ²               +0.00%                ²
+¹ all samples are equal
+² summaries must be >0 to compute geomean
+
+                                          │ .std_Fn.txt  │             .opt_Fn.txt             │
+                                          │  allocs/op   │ allocs/op   vs base                 │
+FnValidString/empty-16                      0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+FnValidString/single_byte-16                0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+FnValidString/single_utf8_rune-16           0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+FnValidString/short_ascii-16                0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+FnValidString/short_utf8-16                 0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+FnValidString/all_utf8_ukranian_poetry-16   0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+FnValidString/long_ascii-16                 0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+FnValidString/wikipedia_diacritic_html-16   0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+FnValidString/wikipedia_japan_html-16       0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+FnValidString/invalid_surrogate_max-16      0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+FnValid/empty-16                            0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+FnValid/single_byte-16                      0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+FnValid/single_utf8_rune-16                 0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+FnValid/short_ascii-16                      0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+FnValid/short_utf8-16                       0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+FnValid/all_utf8_ukranian_poetry-16         0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+FnValid/long_ascii-16                       0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+FnValid/wikipedia_diacritic_html-16         0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+FnValid/wikipedia_japan_html-16             0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+FnValid/invalid_surrogate_max-16            0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹
+geomean                                                ²               +0.00%                ²
+¹ all samples are equal
+² summaries must be >0 to compute geomean
+```
